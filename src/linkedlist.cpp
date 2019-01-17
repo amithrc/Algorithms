@@ -51,3 +51,22 @@ NODE* createForwardList(int val,int callDisp)
     return head;
 
 }
+
+vector<int> FillVector()
+{
+    vector<int> a;
+
+    for(int i=0;i<100;i++)
+    {
+        a.emplace_back(i);
+    }
+    return a;
+}
+
+void DisplayVector(vector<int>& h)
+{
+    for(int i=0;i<h.size();i++)
+    {
+        cout << h[i] << endl;
+    }
+}

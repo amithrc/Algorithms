@@ -19,8 +19,8 @@ NODE* createReverseList(int val,int disp);
 NODE* createForwardList(int val,int disp);
 void DisplayNode(NODE* head);
 int SearchList(NODE* head, int val);
-
-
+vector<int> FillVector();
+void DisplayVector(vector<int>& h);
 
 
 #endif //ALGORITHMS_LINKEDLIST_H
