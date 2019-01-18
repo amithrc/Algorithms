@@ -3,4 +3,4 @@ project(Algorithms)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Algorithms main.cpp headers/linkedlist.h src/linkedlist.cpp headers/generic.h)
+add_executable(Algorithms main.cpp headers/linkedlist.h src/linkedlist.cpp headers/generic.h headers/sorting.h src/sorting.cpp)
