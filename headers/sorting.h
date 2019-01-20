@@ -6,8 +6,11 @@
 #define ALGORITHMS_SORTING_H
 
 #include "generic.h"
+#define INFINITE 999999
 
 void selectionSort(const int *unsorted,int size);
-int* SelectionSortSpace(int *unsorted,int size);
+int* selection_sort_1(int *unsorted,int size);
 
+
+void displaySorted(int *disp, int size);
 #endif //ALGORITHMS_SORTING_H

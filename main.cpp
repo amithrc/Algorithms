@@ -8,10 +8,12 @@ using namespace std;
 
 int main() {
 
-    createForwardList(100,TRUE);
 
-    int A[]={10,20,40,50,60};
 
-    selectionSort(A,5);
+    int A[]={60,20,40,50,10,9000,45};
+
+    int* res = selection_sort_1(A,7);
+    displaySorted(res,7);
+    call_free(res);
     return 0;
 }

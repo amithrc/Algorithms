@@ -15,4 +15,6 @@ using namespace std;
 #define TRUE 1
 #define FALSE 0
 
+void call_free(int*);
+
 #endif //ALGORITHMS_GENERIC_H
