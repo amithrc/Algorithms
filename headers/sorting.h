@@ -8,6 +8,6 @@
 #include "generic.h"
 
 void selectionSort(const int *unsorted,int size);
-
+int* SelectionSortSpace(int *unsorted,int size);
 
 #endif //ALGORITHMS_SORTING_H
