@@ -17,4 +17,7 @@ using namespace std;
 
 void call_free(int*);
 
+void swap(int *a,int *b);
+
+
 #endif //ALGORITHMS_GENERIC_H

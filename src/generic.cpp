@@ -9,3 +9,11 @@ void call_free(int* ptr)
         delete[] ptr;
     }
 }
+
+void swap(int *a,int *b)
+{
+    int temp= *a;
+    *a =*b;
+    *b=temp;
+
+}

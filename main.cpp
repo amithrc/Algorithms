@@ -10,10 +10,10 @@ int main() {
 
 
 
-    int A[]={60,20,40,50,10,9000,45};
+    int A[]={60,20,40,50,10,10,9000,45};
 
-    int* res = selection_sort_1(A,7);
-    displaySorted(res,7);
-    call_free(res);
+    selection_sort_2(A,8);
+    displaySorted(A,8);
+
     return 0;
 }

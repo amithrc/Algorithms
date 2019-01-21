@@ -4,11 +4,24 @@
 #include "../headers/generic.h"
 #include "../headers/sorting.h"
 
-void selectionSort(const int *unsorted,int size)
+/****************************************************************************/
+//In-place selection sort, no extra memory
+//When funtion returns, the same unsorted pointer will be pointing to
+// the sorted items
+/****************************************************************************/
+void selection_sort_2(int *unsorted,int n)
 {
-    for(int i=0;i<size;i++)
+    for(int i=0;i<n;i++)
     {
-        cout << *(unsorted+i) << endl;
+        int iMin=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(unsorted[j] < unsorted[iMin])
+            {
+                iMin=j;
+            }
+        }
+        swap(&unsorted[i],&unsorted[iMin]);
     }
 }
 
@@ -27,7 +40,7 @@ void displaySorted(int *disp, int size)
 
 /****************************************************************************/
 // Below method performs selection sort
-// using extra memory, called responsibility to free the memory
+// using extra memory, caller responsibility to free the memory
 /****************************************************************************/
 int* selection_sort_1(int *unsorted,int n)
 {
