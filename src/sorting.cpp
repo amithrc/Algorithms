@@ -68,3 +68,23 @@ int* selection_sort_1(int *unsorted,int n)
     }
     return sorted;
 }
+/****************************************************************************/
+// Bubble sort , not efficient.
+/****************************************************************************/
+void bubble_sort_1(int *unsorted,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n-1;j++)
+        {
+            if(unsorted[j] > unsorted[j+1])
+            {
+                swap((unsorted+j),(unsorted+j+1));
+            }
+        }
+    }
+}
+void bubble_sort_2(int *unsorted,int size)
+{
+
+}
