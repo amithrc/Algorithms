@@ -84,7 +84,24 @@ void bubble_sort_1(int *unsorted,int n)
         }
     }
 }
-void bubble_sort_2(int *unsorted,int size)
-{
 
+/****************************************************************************/
+// Bubble sort , efficient.
+/****************************************************************************/
+void bubble_sort_2(int *unsorted,int n)
+{
+    bool swapped;
+    for(int i=0;i<n-1;i++)
+    {
+        swapped=false;
+        for(int j=0;j < n-1-i;j++)
+        {
+            if(unsorted[j] > unsorted[j+1])
+            {
+                swap((unsorted+j),(unsorted+j+1));
+                swapped=true;
+            }
+        }
+        if(!swapped) break;
+    }
 }

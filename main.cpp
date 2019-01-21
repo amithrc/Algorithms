@@ -10,12 +10,11 @@ int main() {
 
 
 
-    int A[]={60,20,40,50,10,10,9000,45};
+    int A[]={60,20,40,50,10,10,9000,45,51,54,46};
 
-//    bubble_sort_1(A,8);
-//    displaySorted(A,8);
+    bubble_sort_2(A,11);
+    displaySorted(A,11);
 
-    reverseArray(A,8);
-    displaySorted(A,8);
+
     return 0;
 }
