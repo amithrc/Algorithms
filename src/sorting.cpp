@@ -105,3 +105,44 @@ void bubble_sort_2(int *unsorted,int n)
         if(!swapped) break;
     }
 }
+
+//   int A[]={60,20,40,50,10,10,9000,45,51,54,46};
+
+/****************************************************************************/
+// Insertion sort, efficient.
+/****************************************************************************/
+void insertion_sort_1(int *unsorted,int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        int val=unsorted[i];
+        int hole=i;
+
+      while(hole>0 && unsorted[hole-1]>val)
+      {
+          unsorted[hole]=unsorted[hole-1];
+          hole--;
+      }
+
+      unsorted[hole]=val;
+    }
+}
+/****************************************************************************/
+// My implementation
+/****************************************************************************/
+void insertion_sort_2(int *unsorted,int n)
+{
+
+    for(int i=1;i<n;i++)
+    {
+        for(int j=i;j>0;j--)
+        {
+            if(unsorted[j] < unsorted[j-1])
+            {
+                swap(&unsorted[j],&unsorted[j-1]);
+            }
+        }
+
+    }
+
+}
