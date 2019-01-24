@@ -23,5 +23,11 @@ void bubble_sort_2(int *unsorted,int n);
 void insertion_sort_1(int *unsorted,int n);
 void insertion_sort_2(int *unsorted,int n);
 
+//merge sort
+void merge_sort_1(int *unsorted,int n);
+void merge(int *unsorted,int n,int *left, int nl,int *right, int nr);
+
+
+
 void displaySorted(int *disp, int size);
 #endif //ALGORITHMS_SORTING_H

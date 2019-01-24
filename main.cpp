@@ -17,6 +17,10 @@ int main() {
     insertion_sort_2(A,11);
     displaySorted(A,11);
 
-    int B[]={};
+
+
+
+    merge_sort_1(A,11);
+    displaySorted(A,11);
     return 0;
 }

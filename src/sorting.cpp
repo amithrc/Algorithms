@@ -146,3 +146,75 @@ void insertion_sort_2(int *unsorted,int n)
     }
 
 }
+
+/****************************************************************************/
+// Merge sort
+/****************************************************************************/
+void merge(int *unsorted,int n,int *left, int nl,int *right, int nr)
+{
+
+    int i,j,k;
+    i=j=k=0;
+
+    while(i< nl && j< nr)
+    {
+        if(left[i]<=right[j])
+        {
+            unsorted[k]=left[i];
+            i++;
+        }
+        else
+        {
+            unsorted[k]=right[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i < nl)
+    {
+        unsorted[k]=left[i];
+        i++;
+        k++;
+    }
+
+    while(j < nr)
+    {
+        unsorted[k]=right[j];
+        j++;
+        k++;
+    }
+}
+
+void merge_sort_1(int *unsorted,int n)
+{
+    if(n<2)
+    {
+        return;
+    }
+     int mid=n/2;
+
+    int nl=mid;
+    int nr=n-mid;
+
+
+    int left[nl];
+    int right[nr];
+
+
+    for(int i=0;i<mid;i++)
+    {
+            left[i]=*(unsorted+i);
+    }
+
+    for(int i=0;i < (n-mid);i++)
+    {
+        right[i]=unsorted[i+mid];
+    }
+
+    merge_sort_1(left,nl);
+    merge_sort_1(right,nr);
+    merge(unsorted,n,left,nl,right,nr);
+
+}
+
