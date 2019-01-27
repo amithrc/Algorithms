@@ -102,7 +102,7 @@ void bubble_sort_2(int *unsorted,int n)
                 swapped=true;
             }
         }
-        if(!swapped) break;
+        if(swapped) break;
     }
 }
 
