@@ -6,6 +6,7 @@
 #define ALGORITHMS_GENERIC_H
 
 
+#include <algorithm>
 #include<iostream>
 #include<vector>
 using namespace std;

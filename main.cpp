@@ -12,13 +12,17 @@ int main() {
 
 
     int A[]={60,20,40,50,10,10,9000,45,51,54,46};
-
+    int B[]={15,10,20,8,12,17,25};
     BST b;
-    for(int a:A)
+    for(int a:B)
     {
         b.insert(a);
     }
-    b.LevelOrder();
 
+    b.inorderDisplay();
+
+    cout << b.findMin() <<endl;
+    cout << b.findMax() << endl;
+    cout << "Height = "<< b.getHeight();
     return 0;
 }

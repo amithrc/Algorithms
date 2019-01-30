@@ -24,7 +24,6 @@ TREENODE* BST::getNode(const int val)
     temp->data=val;
     temp->left= nullptr;
     temp->right=nullptr;
-
     return temp;
 }
 
@@ -65,4 +64,68 @@ void BST::LevelOrder()
         if(curr->right!= nullptr) q.push(curr->right);
         q.pop();
     }
+}
+
+void BST::performInorder(TREENODE *root)
+{
+    if(root==nullptr) return;
+    performInorder(root->left);
+    cout<< root->data <<endl;
+    performInorder(root->right);
+}
+
+void BST::inorderDisplay()
+{
+    performInorder(_root);
+}
+
+int BST::getSize()
+{
+    return size;
+}
+
+void BST::preorderDisplay()
+{
+
+
+}
+
+int BST::findMin()
+{
+    TREENODE* iter = _root;
+
+    while(iter->left!=nullptr)
+    {
+        iter = iter->left;
+    }
+    return iter->data;
+}
+
+int BST::findMax()
+{
+    //Implemeting the find Max in inorder traversal.
+
+    TREENODE* iter = _root;
+
+    while(iter->right!=nullptr)
+    {
+        iter = iter->right;
+    }
+    return iter->data;
+}
+
+
+int BST::findHeight(TREENODE *root)
+{
+
+    if(root== nullptr) return -1;
+
+    int left=findHeight(root->left);
+    int right=findHeight(root->right);
+    return max(left,right)+1;
+
+}
+int BST::getHeight()
+{
+    return findHeight(_root);
 }
