@@ -47,7 +47,7 @@ void BST::insert(const int val)
     insert(_root,val);
 }
 
-void BST::LevelOrder()
+void BST::levelOrder()
 {
 
     if(_root == nullptr) return;
@@ -74,7 +74,7 @@ void BST::performInorder(TREENODE *root)
     performInorder(root->right);
 }
 
-void BST::inorderDisplay()
+void BST::inorder()
 {
     performInorder(_root);
 }
@@ -82,12 +82,6 @@ void BST::inorderDisplay()
 int BST::getSize()
 {
     return size;
-}
-
-void BST::preorderDisplay()
-{
-
-
 }
 
 int BST::findMin()
@@ -103,7 +97,6 @@ int BST::findMin()
 
 int BST::findMax()
 {
-    //Implemeting the find Max in inorder traversal.
 
     TREENODE* iter = _root;
 

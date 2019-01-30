@@ -20,6 +20,7 @@ class BST
 private:
     TREENODE* _root;
     int size;
+
     TREENODE* getNode(const int val);
     void insert(TREENODE*& _curr,const int val);
     void performInorder(TREENODE* root);
@@ -29,10 +30,9 @@ private:
 public:
     BST();
     void insert(const int val);
-    void inorderDisplay();
-    void LevelOrder();
+    void inorder();
+    void levelOrder();
     int getSize();
-    void preorderDisplay();
     int findMin();
     int findMax();
     int getHeight();

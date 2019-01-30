@@ -18,8 +18,8 @@ int main() {
     {
         b.insert(a);
     }
-
-    b.inorderDisplay();
+    b.levelOrder();
+    //b.inorderDisplay();
 
     cout << b.findMin() <<endl;
     cout << b.findMax() << endl;
