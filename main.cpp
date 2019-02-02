@@ -6,7 +6,7 @@
 #include "headers/array.h"
 #include "headers/trees.h"
 #include "headers/queue.h"
-
+#include "crackingcodinginterview/headers/arrays.h"
 using namespace std;
 
 int main() {
@@ -27,23 +27,27 @@ int main() {
 //    cout << b.findMax() << endl;
 //    cout << "Height = "<< b.getHeight();
 
-    Queue q(1000);
+//    Queue q(1000);
+//
+//    assert(q.getsize()==0);
+//
+//    for(int i=0;i<1000;i++)
+//    {
+//        q.insert(i*2+10);
+//    }
+//    q.dump(cout);
+//
+//    assert(q.getsize()==1000);
+//    cout << "First item = " << q.get() << endl;
+//    assert(q.getsize()==999);
+//
+//    cout << "Size now is = " << q.getsize() <<endl;
+//    cout << "Capacity now os = " << q.getcapacity() << endl;
 
-    assert(q.getsize()==0);
 
-    for(int i=0;i<1000;i++)
-    {
-        q.insert(i*2+10);
-    }
-    q.dump(cout);
+        ArrayMethods A(100);
 
-    assert(q.getsize()==1000);
-    cout << "First item = " << q.get() << endl;
-    assert(q.getsize()==999);
-
-    cout << "Size now is = " << q.getsize() <<endl;
-    cout << "Capacity now os = " << q.getcapacity() << endl;
-
+        A.display();
 
     return 0;
 }
