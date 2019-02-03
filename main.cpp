@@ -21,8 +21,7 @@ int main() {
     merge_sort_1(B,7);
     displaySorted(B,7);
     BinarySearch bs(B,7);
-
-
+    cout << "Found at = " << bs.searchIteratively(15) << endl;
 
     return 0;
 }
