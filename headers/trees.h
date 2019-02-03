@@ -25,7 +25,10 @@ private:
     void insert(TREENODE*& _curr,const int val);
     void performInorder(TREENODE* root) const;
     int findHeight(TREENODE *root) const;
-
+    int has(TREENODE *root,const int val) const;
+    TREENODE* getMin(TREENODE *root);
+    TREENODE* inorderSuccessor(TREENODE *root,const int val);
+    TREENODE* findCurrent(TREENODE* root,int data);
 
 public:
     BST();
@@ -36,6 +39,11 @@ public:
     int findMin();
     int findMax();
     int getHeight() const;
+    int contains(const int val) const;
+
+    int getSuccessor(const int val);
+
+    void printSuccessor(const int val);
 
 
 };

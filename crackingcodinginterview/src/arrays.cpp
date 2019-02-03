@@ -4,10 +4,18 @@
 
 #include"../headers/arrays.h"
 
-ArrayMethods::ArrayMethods(int cap)
+using namespace cci;
+
+cci::ArrayMethods::ArrayMethods(int cap)
 {
     this->_arr = new int[cap]();
     this->cap=cap;
+}
+
+ArrayMethods::ArrayMethods(int *arr,int capacity)
+{
+    this->_arr = arr;
+    this->cap =capacity;
 }
 
 void ArrayMethods::display()

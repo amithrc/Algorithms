@@ -9,19 +9,24 @@
 #include "headers/search.h"
 
 using namespace std;
-
+using namespace cci;
 int main() {
 
 
 
-   int A[]={60,20,40,50,10,10,9000,45,51,54,46};
-   int B[]={15,10,10,20,8,12,17,25};
+    /// int A[]={60,20,40,50,10,10,9000,45,51,54,46};
+       int B[]={15,10,16,20,8,12,17,25,11};
+
+        BST bs;
+        for(auto AA:B)
+        {
+            bs.insert(AA);
+        }
 
 
-    merge_sort_1(B,7);
-    displaySorted(B,7);
-    BinarySearch bs(B,7);
-    cout << "Found at = " << bs.searchIteratively(15) << endl;
+       // cout << "Get successor = " << bs.getSuccessor(11);
+
+        bs.printSuccessor(8);
 
     return 0;
 }

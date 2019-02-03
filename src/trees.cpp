@@ -111,14 +111,105 @@ int BST::findMax()
 int BST::findHeight(TREENODE *root) const
 {
 
-    if(root== nullptr) return -1;
+if(root== nullptr) return -1;
 
-    int left=findHeight(root->left);
-    int right=findHeight(root->right);
-    return max(left,right)+1;
+int left=findHeight(root->left);
+int right=findHeight(root->right);
+return max(left,right)+1;
 
 }
 int BST::getHeight() const
 {
     return findHeight(_root);
+}
+
+
+int BST::has(TREENODE *root,const int val) const
+{
+    if(root==nullptr) return -1;
+    if(root->data == val ) return root->data;
+    else if(val < root->data)
+        has(root->left,val);
+    else
+        has(root->right,val);
+}
+int BST::contains(const int val) const
+{
+    return has(_root,val);
+}
+
+
+TREENODE* BST::findCurrent(TREENODE *root,int data)
+{
+    if(root == nullptr) return nullptr;
+    if(root->data == data) return root;
+    else if(data < root->data)
+    {
+        return findCurrent(root->left,data);
+    }
+    else
+    {
+        return findCurrent(root->right,data);
+    }
+}
+
+TREENODE* BST::getMin(TREENODE *root) {
+
+    if(root == nullptr) return nullptr;
+    while(root->left != nullptr)
+    {
+        root = root->left;
+    }
+    return root;
+}
+
+TREENODE* BST::inorderSuccessor(TREENODE *root, const int val) {
+
+    TREENODE* current= findCurrent(_root,val);
+    if(current == nullptr) return nullptr;
+
+    if(current->right != nullptr)
+    {
+        return getMin(current->right);
+    }
+    else
+    {
+        TREENODE* successor= nullptr;
+        TREENODE* ancestor= root;
+
+        while(ancestor != current)
+        {
+            if(current->data < ancestor->data)
+            {
+                successor = ancestor;
+                ancestor=ancestor->left;
+            }else
+            {
+                ancestor=ancestor->right;
+            }
+        }
+        return successor;
+    }
+}
+int BST::getSuccessor(const int val)
+{
+    TREENODE* temp = inorderSuccessor(_root,val);
+
+    if(temp!=nullptr)
+    {
+        return temp->data;
+    }
+    return -1;
+}
+
+
+void BST::printSuccessor(const int val)
+{
+    TREENODE* temp = inorderSuccessor(_root,val);
+
+    if(temp!=nullptr)
+    {
+        performInorder(temp);
+    }
+    cout << "Item not found" <<endl;
 }

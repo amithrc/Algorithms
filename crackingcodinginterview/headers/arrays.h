@@ -7,16 +7,22 @@
 
 #include "../../headers/generic.h"
 
-class ArrayMethods
+namespace cci
 {
-    int* _arr;
-    int cap;
+    class ArrayMethods
+    {
+        int* _arr;
+        int cap;
 
-public:
+    public:
 
-    ArrayMethods(int cap);
-    void display();
+        ArrayMethods(int cap);
+        ArrayMethods(int *arr,int capacity);
+        void display();
 
-};
+    };
+
+}
+
 
 #endif //ALGORITHMS_ARRAYS_H
