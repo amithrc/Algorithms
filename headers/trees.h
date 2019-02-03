@@ -23,19 +23,19 @@ private:
 
     TREENODE* getNode(const int val);
     void insert(TREENODE*& _curr,const int val);
-    void performInorder(TREENODE* root);
-    int findHeight(TREENODE *root);
+    void performInorder(TREENODE* root) const;
+    int findHeight(TREENODE *root) const;
 
 
 public:
     BST();
     void insert(const int val);
-    void inorder();
-    void levelOrder();
+    void inorder() const;
+    void levelOrder() const;
     int getSize();
     int findMin();
     int findMax();
-    int getHeight();
+    int getHeight() const;
 
 
 };

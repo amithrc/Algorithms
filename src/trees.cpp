@@ -47,7 +47,7 @@ void BST::insert(const int val)
     insert(_root,val);
 }
 
-void BST::levelOrder()
+void BST::levelOrder() const
 {
 
     if(_root == nullptr) return;
@@ -66,7 +66,7 @@ void BST::levelOrder()
     }
 }
 
-void BST::performInorder(TREENODE *root)
+void BST::performInorder(TREENODE *root) const
 {
     if(root==nullptr) return;
     performInorder(root->left);
@@ -74,7 +74,7 @@ void BST::performInorder(TREENODE *root)
     performInorder(root->right);
 }
 
-void BST::inorder()
+void BST::inorder() const
 {
     performInorder(_root);
 }
@@ -108,7 +108,7 @@ int BST::findMax()
 }
 
 
-int BST::findHeight(TREENODE *root)
+int BST::findHeight(TREENODE *root) const
 {
 
     if(root== nullptr) return -1;
@@ -118,7 +118,7 @@ int BST::findHeight(TREENODE *root)
     return max(left,right)+1;
 
 }
-int BST::getHeight()
+int BST::getHeight() const
 {
     return findHeight(_root);
 }
