@@ -7,7 +7,13 @@
 #include"../headers/linkedlist.h"
 
 
-void DisplayNode(NODE* head)
+LinkedList::LinkedList(int val) {
+    size=val;
+    head= nullptr;
+    current= nullptr;
+}
+
+void LinkedList::DisplayNode(NODE *head)
 {
     NODE* iter=head;
     while(iter)
@@ -18,23 +24,21 @@ void DisplayNode(NODE* head)
     cout<<endl;
 }
 
-NODE* getNode(int val)
+NODE* LinkedList::getNode(int val)
 {
     NODE* t = new NODE;
     t->x=val;
-    t->next=NULL;
+    t->next= nullptr;
 }
 
-NODE* createForwardList(int val,int callDisp)
+void LinkedList::createForwardList()
 {
-    NODE* head, *current;
-    head=current=NULL;
 
-    for(int i=0;i< val;i++)
+    for(int i=0;i< size;i++)
     {
         NODE* temp = getNode(i);
 
-        if(head==NULL && current==NULL)
+        if(head== nullptr && current== nullptr)
         {
             head=current=temp;
         }
@@ -44,12 +48,38 @@ NODE* createForwardList(int val,int callDisp)
             current=temp;
         }
     }
-    if(callDisp)
-    {
-        DisplayNode(head);
-        return NULL;
-    }
-    return head;
-
 }
 
+void LinkedList::dump() {
+    DisplayNode(head);
+}
+
+void LinkedList::remove(const int val)
+{
+
+    NODE* iter = head;
+
+    if(iter->x == val)
+    {
+        head=iter->next;
+        delete iter;
+    }else
+    {
+        NODE* prev = iter;
+        iter = iter->next;
+        while(iter != nullptr)
+        {
+            if(iter->x == val)
+            {
+                prev->next=iter->next;
+                delete iter;
+                return;
+            }
+            iter=iter->next;
+            prev=prev->next;
+        }
+
+    }
+    cout << "Item is not in the list" <<endl;
+
+}

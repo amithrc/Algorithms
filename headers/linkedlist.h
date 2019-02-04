@@ -14,11 +14,23 @@ typedef struct Node
 }NODE;
 
 
-NODE* getNode(int x);
-NODE* createReverseList(int val,int disp);
-NODE* createForwardList(int val,int disp);
-void DisplayNode(NODE* head);
-int SearchList(NODE* head, int val);
+class LinkedList
+{
+private:
+     NODE* head, *current;
+    void DisplayNode(NODE* head);
+    NODE* getNode(int val);
+    int size;
+
+    public:
+    LinkedList(int val);
+    void createForwardList();
+    void dump();
+    void remove(const int val);
+
+
+};
+
 
 
 #endif //ALGORITHMS_LINKEDLIST_H
