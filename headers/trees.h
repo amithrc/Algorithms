@@ -30,6 +30,7 @@ private:
     TREENODE* inorderSuccessor(TREENODE *root,const int val);
     TREENODE* findCurrent(TREENODE* root,int data);
     void insert(TREENODE** _curr,const int val);
+    TREENODE* remove(TREENODE* root,const int val);
 
 
 public:
@@ -46,6 +47,7 @@ public:
     int getSuccessor(const int val);
 
     void printSuccessor(const int val);
+    void remove(const int val);
 
 
 };

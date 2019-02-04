@@ -218,6 +218,7 @@ void BST::printSuccessor(const int val)
 void BST::insert(TREENODE **_curr, const int val)
 {
 
+
     if(*_curr==nullptr)
     {
         *_curr= getNode(val);
@@ -230,4 +231,52 @@ void BST::insert(TREENODE **_curr, const int val)
     {
         insert(&(*_curr)->right,val);
     }
+}
+
+
+TREENODE* BST::remove(TREENODE *root, const int val)
+{
+    if(root==nullptr) return nullptr;
+    else if(val < root->data)
+    {
+        root->left= remove(root->left,val);
+    }
+    else if (val > root->data)
+    {
+        root->right=remove(root->right,val);
+    }
+    else
+    {
+        if(root->left== nullptr && root->right== nullptr)
+        {
+            delete root;
+            root= nullptr;
+
+        }else if(root->left== nullptr)
+        {
+            TREENODE* temp=root;
+            root=root->right;
+            delete temp;
+            return root;
+        }else if(root->right== nullptr)
+        {
+            TREENODE* temp=root;
+            root=root->left;
+            delete temp;
+            return root;
+        }
+        else
+        {
+            TREENODE* temp = getMin(root->right);
+            root->data = temp->data;
+            root->right= remove(root->right,temp->data);
+
+        }
+
+    }
+    return root;
+}
+void BST::remove(const int val) {
+    remove(_root,val);
+
 }

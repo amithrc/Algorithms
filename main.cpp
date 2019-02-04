@@ -24,8 +24,12 @@ int main() {
         }
 
 
-        cout << "Get successor = " << bs.getSuccessor(15);
+      bs.levelOrder();
 
+        cout << "Removing "<<endl;
+
+        bs.remove(17);
+    bs.levelOrder();
 
 
 
