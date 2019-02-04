@@ -44,7 +44,7 @@ void BST::insert(TREENODE *& _curr,const int val)
 
 void BST::insert(const int val)
 {
-    insert(_root,val);
+    insert(&_root,val);
 }
 
 void BST::levelOrder() const
@@ -212,4 +212,22 @@ void BST::printSuccessor(const int val)
         performInorder(temp);
     }
     cout << "Item not found" <<endl;
+}
+
+
+void BST::insert(TREENODE **_curr, const int val)
+{
+
+    if(*_curr==nullptr)
+    {
+        *_curr= getNode(val);
+        size++;
+    }else if(val < (*_curr)->data)
+    {
+        insert(&((*_curr)->left),val);
+    }
+    else
+    {
+        insert(&(*_curr)->right,val);
+    }
 }

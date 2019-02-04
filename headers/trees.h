@@ -29,6 +29,8 @@ private:
     TREENODE* getMin(TREENODE *root);
     TREENODE* inorderSuccessor(TREENODE *root,const int val);
     TREENODE* findCurrent(TREENODE* root,int data);
+    void insert(TREENODE** _curr,const int val);
+
 
 public:
     BST();
