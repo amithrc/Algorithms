@@ -20,6 +20,9 @@ namespace cci
         ArrayMethods(int *arr,int capacity);
         void display();
 
+        int find(int *arr,int n);
+
+
     };
 
 }

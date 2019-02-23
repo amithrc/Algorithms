@@ -12,44 +12,33 @@
 
 using namespace std;
 using namespace cci;
+
+
+
 int main() {
 
 
 
-//    /// int A[]={60,20,40,50,10,10,9000,45,51,54,46};
-//       int B[]={15,10,16,20,8,12,17,25,11};
-//
-//        BST bs;
-//        for(auto AA:B)
-//        {
-//            bs.insert(AA);
-//        }
-//
-//
-//      bs.levelOrder();
-//
-//        cout << "Removing "<<endl;
-//
-//        bs.remove(17);
-//    bs.levelOrder();
-//
+    /// int A[]={60,20,40,50,10,10,9000,45,51,54,46};
+    int B[]={15,10,16,20,8,12,17,25,11};
 
-
-stack s(100);
-
-
-for(int i=0;i<100;i++)
-{
-    s.push(i*2+2);
-}
-
-s.dump();
-
-    for(int i=0;i<20;i++)
+    BST bs;
+    for(auto AA:B)
     {
-        s.pop();
+        bs.insert(AA);
     }
 
-    s.dump();
+
+    bs.levelOrder();
+
+    cout << "Removing "<<endl;
+
+    bs.remove(17);
+    bs.levelOrder();
+
+
+
     return 0;
+
+
 }
