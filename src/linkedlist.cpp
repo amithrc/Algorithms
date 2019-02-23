@@ -13,16 +13,6 @@ LinkedList::LinkedList(int val) {
     current= nullptr;
 }
 
-void LinkedList::DisplayNode(NODE *head)
-{
-    NODE* iter=head;
-    while(iter)
-    {
-        cout << iter->x << "-->";
-        iter=iter->next;
-    }
-    cout<<endl;
-}
 
 NODE* LinkedList::getNode(int val)
 {
@@ -31,55 +21,27 @@ NODE* LinkedList::getNode(int val)
     t->next= nullptr;
 }
 
-void LinkedList::createForwardList()
-{
-
-    for(int i=0;i< size;i++)
-    {
-        NODE* temp = getNode(i);
-
-        if(head== nullptr && current== nullptr)
-        {
-            head=current=temp;
-        }
-        else
-        {
-            current->next=temp;
-            current=temp;
-        }
-    }
-}
 
 void LinkedList::dump() {
-    DisplayNode(head);
+    //DisplayNode(head);
 }
 
-void LinkedList::remove(const int val)
-{
 
-    NODE* iter = head;
 
-    if(iter->x == val)
+/*
+ * Insert at the end of the list
+ */
+void LinkedList::insert(const int val) {
+
+    Node* temp = getNode(val);
+
+    if( head == nullptr && current == nullptr)
     {
-        head=iter->next;
-        delete iter;
+        head =current = temp ;
     }else
     {
-        NODE* prev = iter;
-        iter = iter->next;
-        while(iter != nullptr)
-        {
-            if(iter->x == val)
-            {
-                prev->next=iter->next;
-                delete iter;
-                return;
-            }
-            iter=iter->next;
-            prev=prev->next;
-        }
-
+        current->next =temp;
+        current = temp;
     }
-    cout << "Item is not in the list" <<endl;
-
 }
+

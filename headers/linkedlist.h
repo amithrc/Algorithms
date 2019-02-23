@@ -24,9 +24,9 @@ private:
 
     public:
     LinkedList(int val);
-    void createForwardList();
     void dump();
-    void remove(const int val);
+    void insert(const int val);
+    void insertAtfront(const int val);
 
 
 };
