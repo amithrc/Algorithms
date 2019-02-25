@@ -50,3 +50,39 @@ void display2d(MAT* mat)
     }
 
 }
+
+MATD* create2d(int row, int column)
+{
+
+    MATD* temp = new MATD;
+
+    temp->mat = new int[row*column];
+    temp->row = row;
+    temp->col =column;
+    return temp;
+}
+
+void fill2d_1(MATD* mat)
+{
+    for(int i=0;i< mat->row;i++)
+    {
+        for(int j=0;j< mat->col; j++)
+        {
+            *(mat->mat+i*mat->col+j)=0;
+        }
+    }
+
+}
+
+void display2d_1(MATD* mat)
+{
+    for(int i=0;i< mat->row;i++)
+    {
+        for(int j=0;j< mat->col; j++)
+        {
+            cout << *(mat->mat+i*mat->col+j) << " ";
+        }
+        cout << endl;
+    }
+
+}

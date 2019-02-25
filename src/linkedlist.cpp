@@ -7,8 +7,8 @@
 #include"../headers/linkedlist.h"
 
 
-LinkedList::LinkedList(int val) {
-    size=val;
+LinkedList::LinkedList() {
+    size=0;
     head= nullptr;
     current= nullptr;
 }
@@ -21,9 +21,20 @@ NODE* LinkedList::getNode(int val)
     t->next= nullptr;
 }
 
+void LinkedList::DisplayNode(NODE *head) {
+
+    NODE* iter = head;
+    while( iter != nullptr)
+    {
+        cout << iter->x << " ->";
+        iter = iter->next;
+    }
+
+}
+
 
 void LinkedList::dump() {
-    //DisplayNode(head);
+    DisplayNode(head);
 }
 
 
@@ -32,7 +43,7 @@ void LinkedList::dump() {
  * Insert at the end of the list
  */
 void LinkedList::insert(const int val) {
-
+    size++;
     Node* temp = getNode(val);
 
     if( head == nullptr && current == nullptr)
@@ -45,3 +56,36 @@ void LinkedList::insert(const int val) {
     }
 }
 
+void LinkedList::insertAtfront(const int val) {
+    size++;
+    Node* temp =getNode(val);
+
+    if(head != nullptr)
+    {
+        temp->next =head;
+        head = temp;
+    }else
+    {
+        head = current = temp;
+    }
+}
+
+
+int LinkedList::getSize() {
+    return size;
+}
+
+
+int LinkedList::check(NODE *root, const int val) {
+    NODE* iter = head;
+    while( iter != nullptr)
+    {
+        if(iter->x == val ) return iter->x;
+        iter = iter->next;
+    }
+    return -1;
+}
+
+int LinkedList::has(const int val) {
+    return check(head, val);
+}

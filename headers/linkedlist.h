@@ -21,14 +21,15 @@ private:
     void DisplayNode(NODE* head);
     NODE* getNode(int val);
     int size;
+    int check(NODE* root,const int val);
 
     public:
-    LinkedList(int val);
-    void dump();
-    void insert(const int val);
-    void insertAtfront(const int val);
-
-
+        LinkedList();
+        void dump();
+        void insert(const int val);
+        void insertAtfront(const int val);
+        int getSize();
+        int has(const int val);
 };
 
 

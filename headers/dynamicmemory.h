@@ -15,8 +15,21 @@ typedef struct Matrix
     int col;
 }MAT;
 
+typedef struct Matrix1
+{
+    int *mat;
+    int row;
+    int col;
+}MATD;
+
+
+
 MAT* allocate2d(int row, int column);
 void fill2d(MAT* mat);
 
 void display2d(MAT* mat);
+MATD* create2d(int row, int column);
+void fill2d_1(MATD* mat);
+void display2d_1(MATD* mat);
+
 #endif //ALGORITHMS_DYNAMICMEMORY_H
