@@ -25,7 +25,7 @@ typedef struct List
     void (*insert)(struct List*,int);
     NODE1* (*allocateNode)(int);
     void (*display)(struct List*);
-}LIST;
+} LIST;
 
 LIST* new_List();
 

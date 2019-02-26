@@ -9,5 +9,5 @@
 
 
 void reverseArray(int *_arr,int n);
-
+int search(int ar[], int size);
 #endif //ALGORITHMS_ARRAY_H

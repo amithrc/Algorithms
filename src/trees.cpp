@@ -138,21 +138,6 @@ int BST::contains(const int val) const
     return has(_root,val);
 }
 
-
-TREENODE* BST::findCurrent(TREENODE *root,int data)
-{
-    if(root == nullptr) return nullptr;
-    if(root->data == data) return root;
-    else if(data < root->data)
-    {
-        return findCurrent(root->left,data);
-    }
-    else
-    {
-        return findCurrent(root->right,data);
-    }
-}
-
 TREENODE* BST::getMin(TREENODE *root) {
 
     if(root == nullptr) return nullptr;
@@ -163,29 +148,45 @@ TREENODE* BST::getMin(TREENODE *root) {
     return root;
 }
 
-TREENODE* BST::inorderSuccessor(TREENODE *root, const int val) {
 
-    TREENODE* current= findCurrent(_root,val);
+TREENODE* BST::findCurrent(TREENODE *root,int data)
+{
+    if(root == nullptr) return nullptr;
+    if(root->data==data) return root;
+    else if(data < root->data)
+    {
+        findCurrent(root->left,data);
+    }
+    else
+    {
+        findCurrent(root->right,data);
+    }
+}
+
+
+TREENODE* BST::inorderSuccessor(TREENODE *root, const int val)
+{
+    TREENODE* current = findCurrent(root,val);
     if(current == nullptr) return nullptr;
 
     if(current->right != nullptr)
     {
         return getMin(current->right);
-    }
-    else
+    }else
     {
-        TREENODE* successor= nullptr;
-        TREENODE* ancestor= root;
+        TREENODE* successor = nullptr;
+        TREENODE* ancestor = root;
 
         while(ancestor != current)
         {
             if(current->data < ancestor->data)
             {
-                successor = ancestor;
+                successor =ancestor;
                 ancestor=ancestor->left;
-            }else
+            }
+            else
             {
-                ancestor=ancestor->right;
+                ancestor= ancestor->right;
             }
         }
         return successor;
@@ -218,7 +219,6 @@ void BST::printSuccessor(const int val)
 void BST::insert(TREENODE **_curr, const int val)
 {
 
-
     if(*_curr==nullptr)
     {
         *_curr= getNode(val);
@@ -239,7 +239,7 @@ TREENODE* BST::remove(TREENODE *root, const int val)
     if(root==nullptr) return nullptr;
     else if(val < root->data)
     {
-        root->left= remove(root->left,val);
+        root->left=remove(root->left,val);
     }
     else if (val > root->data)
     {
@@ -247,6 +247,7 @@ TREENODE* BST::remove(TREENODE *root, const int val)
     }
     else
     {
+        //item needs to be deleted
         if(root->left== nullptr && root->right== nullptr)
         {
             delete root;
@@ -257,26 +258,27 @@ TREENODE* BST::remove(TREENODE *root, const int val)
             TREENODE* temp=root;
             root=root->right;
             delete temp;
-            return root;
         }else if(root->right== nullptr)
         {
             TREENODE* temp=root;
             root=root->left;
             delete temp;
-            return root;
         }
         else
         {
             TREENODE* temp = getMin(root->right);
             root->data = temp->data;
             root->right= remove(root->right,temp->data);
-
         }
 
     }
     return root;
 }
 void BST::remove(const int val) {
-    remove(_root,val);
+
+    if(remove(_root,val)== nullptr)
+    {
+        cout << val << "  Does not exists in the tree, left unchanged";
+    }
 
 }
