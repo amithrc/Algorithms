@@ -30,6 +30,7 @@ private:
         void insertAtfront(const int val);
         int getSize();
         int has(const int val);
+        LinkedList* addTwoList(LinkedList&);
 };
 
 

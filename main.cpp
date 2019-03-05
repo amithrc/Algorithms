@@ -23,80 +23,24 @@ using namespace cci;
 int main() {
 
 
-//
-//     point *obj = new_point(10,20);
-//
-//     cout << getX(obj) << endl;
-//     cout << getY(obj) << endl;
+ LinkedList l1;
+ LinkedList l2;
+
+    l1.insert(2);
+    l1.insert(4);
+    l1.insert(3);
+
+    l2.insert(5);
+    l2.insert(6);
+    l2.insert(4);
 
 
-
-
-//     EMPPTR emp = new_employee(10);
-//
-//     cout << emp->getSalary(emp->experience);
-
-
-
-    // LIST* ls = new_List();
-//    int B[]={15,10,16,20,8,12,17,25,11};
-
-//    for(auto AA:B)
-//    {
-//        ls->insert(ls,AA);
-//    }
-//
-//    ls->display(ls);
-
-
-
-    int ar[] = { 1, 3, 4, 5, 6,7, 8 };
-    int size = sizeof(ar) / sizeof(ar[0]);
-    cout << "Missing number:" << search(ar, size);
-
-    cout << endl;
-
-
-
-
-
-    /// int A[]={60,20,40,50,10,10,9000,45,51,54,46};
-    int B[]={15,10,16,20,8,12,17,25,11};
-
-    BST bs;
-    LinkedList ls;
-    for(auto AA:B)
-    {
-        bs.insert(AA);
-    }
-
-        //bs.levelOrder();
-   // cout << bs.getSuccessor(10) << endl;
-
-   bs.remove(20);
-    bs.levelOrder();
-//    cout <<endl;
-//    cout << ls.getSize() <<endl;
-//
-//    cout << ls.has(100) <<endl;
-//
-//
-//    bs.levelOrder();
-//
-//    cout << "Removing "<<endl;
-//
-//    bs.remove(17);
-//    bs.levelOrder();
-//
-//
-//    MAT* temp = allocate2d(10,10);
-//    fill2d(temp);
-//
-//    display2d(temp);
-//    MATD* temp1 =create2d(10,10);
-//    fill2d_1(temp1);
-//    display2d_1(temp1);
-
+    l1.dump();
+    cout << "\n";
+    l2.dump();
+    cout << "\n";
+    LinkedList* l3 = l1.addTwoList(l2);
+    l3->dump();
     return 0;
 
 

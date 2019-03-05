@@ -89,3 +89,30 @@ int LinkedList::check(NODE *root, const int val) {
 int LinkedList::has(const int val) {
     return check(head, val);
 }
+
+/*
+ * Add numbers and carry over, a single digit
+ */
+LinkedList* LinkedList::addTwoList(LinkedList &l2) {
+
+    NODE* l1h = this->head;
+    NODE* l2h =l2.head;
+
+    int carry=0;
+
+    auto newhead = new LinkedList();
+
+    while(l1h != nullptr && l2h != nullptr)
+    {
+
+        int sum = l1h->x + l2h->x+ carry;
+        int m = sum%10;
+        newhead->insert(m);
+
+        carry = sum/10;
+        l1h= l1h->next;
+        l2h= l2h->next;
+
+    }
+    return newhead;
+}
