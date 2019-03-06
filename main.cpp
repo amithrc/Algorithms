@@ -23,24 +23,28 @@ using namespace cci;
 int main() {
 
 
- LinkedList l1;
- LinkedList l2;
+// LinkedList l1;
+// LinkedList l2;
+//
+//    l1.insert(2);
+//    l1.insert(4);
+//    l1.insert(3);
+//
+//    l2.insert(5);
+//    l2.insert(6);
+//    l2.insert(4);
+//
+//
+//    l1.dump();
+//    cout << "\n";
+//    l2.dump();
+//    cout << "\n";
+//    LinkedList* l3 = l1.addTwoList(l2);
+//    l3->dump();
 
-    l1.insert(2);
-    l1.insert(4);
-    l1.insert(3);
+   int a[] = {1,7,5,9,2,12,3,3};
+   printPairSumsUpToK(a,7,2);
 
-    l2.insert(5);
-    l2.insert(6);
-    l2.insert(4);
-
-
-    l1.dump();
-    cout << "\n";
-    l2.dump();
-    cout << "\n";
-    LinkedList* l3 = l1.addTwoList(l2);
-    l3->dump();
     return 0;
 
 

@@ -10,4 +10,6 @@
 
 void reverseArray(int *_arr,int n);
 int search(int ar[], int size);
+
+void printPairSumsUpToK(int *arr,int n,int k);
 #endif //ALGORITHMS_ARRAY_H

@@ -31,6 +31,7 @@ private:
         int getSize();
         int has(const int val);
         LinkedList* addTwoList(LinkedList&);
+
 };
 
 

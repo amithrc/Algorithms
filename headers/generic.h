@@ -10,6 +10,7 @@
 #include<iostream>
 #include<vector>
 #include <stdlib.h>
+#include <set>
 using namespace std;
 
 #define MAX 100
