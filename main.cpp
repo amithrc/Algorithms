@@ -44,7 +44,7 @@ int main() {
 
    int a[] = {1,7,5,9,2,12,3,3};
    printPairSumsUpToK(a,7,2);
-
+	printf("Testing");
     return 0;
 
 
